@@ -1,0 +1,10 @@
+#!/bin/bash
+query="layout:\\s*us"
+setxkbmap -query | grep -e "$query"
+status=$?
+if [ $status -ne 0 ]; then
+    setxkbmap us
+else
+    setxkbmap se
+fi
+setxkbmap -option caps:escape
