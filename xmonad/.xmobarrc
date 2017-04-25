@@ -40,8 +40,8 @@ Config {
         -- weather monitor
         [ Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
                              ] 36000
-        , Run Com "/home/jonathan/bin/wireless.sh" [] "wifi" 30
-        , Run Com "/home/jonathan/bin/volume.sh" [] "vol" 3
+        , Run Com "/home/jonathan/.bin/wireless.sh" [] "wifi" 30
+        , Run Com "/home/jonathan/.bin/volume.sh" [] "vol" 3
         -- network activity monitor (dynamic interface resolution)
         , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: kB/s

@@ -29,5 +29,5 @@ main = do
         , ((0, xK_Print), spawn "gnome-screenshot")
         , ((mod4Mask, xK_o), spawn "amixer set Master 2+")
         , ((mod4Mask, xK_i), spawn "amixer set Master 2-")
-        , ((mod4Mask, xK_u), spawn "toggl-layout")
+        , ((mod4Mask, xK_u), spawn "~/.bin/toggl-layout")
         ]
