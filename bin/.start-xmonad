@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#/usr/share/xsessions/xmonad.desktop
+# desktop file that should point to this file
+synclient HorizTwoFingerScroll=1
+#synclient TouchpadOff=1
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 6 --height 18 --transparent true --tint 0x504945 --widthtype percent --alpha 0 &
+
+setxkbmap -option caps:escape
+wmname LG3D
+setxkbmap us
+
+source ~/bin/env.sh
+xmonad-session
+
