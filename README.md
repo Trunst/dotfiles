@@ -14,3 +14,4 @@
 * ln -s ~/dev/dotfiles/zsh/.zshrc ~/.zshrc
 * ln -s ~/dev/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 * ln -s ~/dev/bin ~/.bin/
+* ln -s ~/dev/dotfiles/xmonad/xmonad.desktop /usr/share/xsessions/xmonad.desktop
