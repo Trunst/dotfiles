@@ -2,8 +2,8 @@ Config {
 
    -- appearance
      font =         "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
-   , bgColor =      "#bdae93"
-   , fgColor =      "#504945"
+   , bgColor =      "#504945"
+   , fgColor =      "#bdae93"
    , position = TopW L 94
    , border =       BottomB
    , borderColor =  "#504945"
@@ -79,12 +79,12 @@ Config {
                              ] 10
 
         -- battery monitor
-        , Run Battery        [ "--template" , "Batt: <acstatus>"
+        , Run Battery        [ "--template" , "<icon=.icons/bat_full_01.xbm/>: <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "darkred"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
+                             , "--low"      , "#cc241d"
+                             , "--normal"   , "#d65d0e"
+                             , "--high"     , "#689d6a"
 
                              , "--" -- battery specific options
                                        -- discharging status
@@ -97,11 +97,12 @@ Config {
 
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#282828>%F (%a) %H:%M</fc>" "date" 10
+        , Run Date           "<fc=#bdae93>%F (%a v%U) %H:%M</fc>" "date" 10
 
         -- keyboard layout indicator
-        , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
-                             , ("us"         , "<fc=#8B0000>US</fc>")
+        , Run Kbd            [ ("us(dvorak)" , "<fc=#bdae93>DV</fc>")
+                             , ("us"         , "<fc=#bdae93>US</fc>")
+                             , ("se"         , "<fc=#689d6a>SE</fc>")
                              ]
         , Run StdinReader
         ]
