@@ -30,4 +30,5 @@ main = do
         , ((mod4Mask, xK_o), spawn "amixer set Master 2+")
         , ((mod4Mask, xK_i), spawn "amixer set Master 2-")
         , ((mod4Mask, xK_u), spawn "~/.bin/toggl-layout")
+        , ((mod4Mask, xK_a), spawn "~/.bin/toggl-touchpad")
         ]

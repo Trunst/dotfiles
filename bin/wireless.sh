@@ -25,7 +25,7 @@ case $bars in
   *)  bar='[X]' ;;
 esac
 
-echo "<fc=#d65d0e><icon=.icons/wifi_01.xbm/></fc> $essid <fc=#d65d0e>$stngth% $http_proxy</fc>"
 
+echo "<fc=#d65d0e><icon=.icons/wifi_01.xbm/></fc> $essid <fc=#d65d0e>$stngth% $http_proxy</fc>"
 exit 0
 
