@@ -1,9 +1,9 @@
 execute pathogen#infect()
 
-set relativenumber
+" set relativenumber
 set nu
 set background=light
-set nowrap
+set wrap
 set mouse=a
 
 " makes it possible to search for files
@@ -18,9 +18,20 @@ set shiftwidth=4
 set expandtab
 
 " enable line numbers
-let NERDTreeShowLineNumbers=1
+" let NERDTreeShowLineNumbers=1
 " make sure relative line numbers are used
-autocmd FileType nerdtree setlocal relativenumber
+" autocmd FileType nerdtree setlocal relativenumber
 colorscheme gruvbox
 set background=dark
 
+map j gj
+map k gk
+map $ g$
+map 0 g0
+map ^ g^
+noremap Y "+y
+" nmap <C-L> <C-W>L
+" nmap <C-H> <C-W>H
+
+noremap K kJ
+noremap ) f)
