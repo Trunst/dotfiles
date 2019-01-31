@@ -12,6 +12,7 @@ import qualified XMonad.StackSet as W
 conf = defaultConfig
         { manageHook = manageDocks <+> myManageHook 
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , handleEventHook    = handleEventHook defaultConfig <+> docksEventHook
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
         , focusFollowsMouse = False
         , workspaces = myWorkspaces
@@ -20,6 +21,7 @@ conf = defaultConfig
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
+    , className =? "Gnome-calculator" --> doFloat
     ]
 
 myWorkspaces = ["1","2","3","4","5","6","7","8","9"]

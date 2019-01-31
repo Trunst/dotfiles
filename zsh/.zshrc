@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jonathan/.oh-my-zsh
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -48,9 +49,12 @@ ZSH_THEME="robbyrussell-gruvbox"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# Find your Python User Base path (where Python --user will install packages/scripts)
+USER_BASE_PATH=$(python -m site --user-base)
+
 # User configuration
 
-export PATH="$HOME/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$HOME/bin:$HOME/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$USER_BASE_PATH/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -79,12 +83,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dce="docker-compose exec"
+alias dcu="docker-compose up"
+alias dcb="docker-compose build"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/Programs/netbeans-8.2/java/maven/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="$HOME/.nvm"
-
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
     eval `ssh-agent`
@@ -92,4 +99,11 @@ if [ ! -S ~/.ssh/ssh_auth_sock ]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+ 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/jonathan/.nvm/versions/node/v4.4.7/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/jonathan/.nvm/versions/node/v4.4.7/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/jonathan/.nvm/versions/node/v4.4.7/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/jonathan/.nvm/versions/node/v4.4.7/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
